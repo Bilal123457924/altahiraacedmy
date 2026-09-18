@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin - Al Tahira</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+         :root {
+            --green: #103326;
+            --gold: #d4b26a;
+            --bg: #f6f1db
+        }
+        
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: var(--bg)
+        }
+        
+        .login {
+            max-width: 400px;
+            margin: 100px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center
+        }
+        
+        .hidden {
+            display: none
+        }
+        
+        .dashboard {
+            display: flex;
+            min-height: 100vh
+        }
+        
+        .sidebar {
+            width: 250px;
+            background: var(--green);
+            color: var(--gold);
+            padding: 20px
+        }
+        
+        .sidebar a {
+            color: var(--gold);
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 5px 0
+        }
+        
+        .sidebar a:hover,
+        .active {
+            background: var(--gold);
+            color: var(--green)!important
+        }
+        
+        .main {
+            flex: 1;
+            padding: 20px
+        }
+        
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05)
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse
+        }
+        
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+            font-size: 14px
+        }
+        
+        .btn {
+            background: var(--green);
+            color: var(--gold);
+            padding: 8px 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer
+        }
+        
+        input,
+        select {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="loginBox" class="login">
+        <h2>Admin Login</h2>
+        <p>Al Tahira Academy</p>
+        <input id="pass" type="password" placeholder="Enter Password (altahira123)" style="width:90%">
+        <button class="btn" style="width:95%;margin-top:10px" onclick="login()">Login to Dashboard</button>
+        <p style="font-size:12px;color:gray">Demo Password: altahira123</p>
+    </div>
+
+    <div id="dashboard" class="dashboard hidden">
+        <div class="sidebar">
+            <h3>🕌 Quran Academy</h3>
+            <p style="font-size:12px">Admin Panel</p>
+            <a href="#" class="active" onclick="show('overview')">📊 Dashboard Overview</a>
+            <a href="#" onclick="show('students')">👥 Student Registration / Manage Students</a>
+            <a href="#" onclick="show('courses')">📚 Add/Edit Courses</a>
+            <a href="#" onclick="show('teachers')">👨‍🏫 Manage Teachers Data</a>
+            <a href="#" onclick="show('fees')">💰 Fee Records</a>
+            <a href="#" onclick="show('schedule')">🗓️ Class Schedule</a>
+            <a href="#" onclick="show('cert')">🎓 Issue Certificates</a>
+            <a href="index.html" style="margin-top:30px;background:#00000030">← Back to Website</a>
+        </div>
+        <div class="main">
+            <div id="overview">
+                <h2>Dashboard Overview</h2>
+                <div style="display:flex;gap:15px;flex-wrap:wrap">
+                    <div class="card" style="flex:1"><b>Total Students</b>
+                        <h2>32</h2><small>+4 this week</small></div>
+                    <div class="card" style="flex:1"><b>Pending Registrations</b>
+                        <h2>5</h2><small>from WhatsApp</small></div>
+                    <div class="card" style="flex:1"><b>Total Fees Collected</b>
+                        <h2>95,000 PKR</h2><small>This month</small></div>
+                    <div class="card" style="flex:1"><b>Certificates Issued</b>
+                        <h2>12</h2><small></small></div>
+                </div>
+                <div class="card">
+                    <h3>Recent Student Registrations (From Website Form)</h3>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Country/Phone</th>
+                            <th>Selected Course</th>
+                            <th>Preferred Time</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr>
+                            <td>Ali Raza</td>
+                            <td>10</td>
+                            <td>Iran / +989200721412</td>
+                            <td>Hifz</td>
+                            <td>Evening</td>
+                            <td><button class="btn">Approve</button></td>
+                        </tr>
+                        <tr>
+                            <td>Fatima</td>
+                            <td>22</td>
+                            <td>Pakistan / 0309...</td>
+                            <td>Tajweed</td>
+                            <td>Morning</td>
+                            <td><button class="btn">Approve</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="students" class="hidden">
+                <h2>Manage Students</h2>
+                <div class="card"><input placeholder="Search Student Name / Phone"><button class="btn">Search</button><br><br>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Course</th>
+                            <th>Teacher: Shabbir Hussain</th>
+                            <th>Fee Status</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr>
+                            <td>Ahmed</td>
+                            <td>Nazra</td>
+                            <td>Shabbir Hussain Kamal</td>
+                            <td>Paid</td>
+                            <td><button class="btn">Edit</button> <button class="btn" style="background:red;color:white">Delete</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="courses" class="hidden">
+                <h2>Courses Add/Edit (For Separate Course Pages)</h2>
+                <div class="card"><input placeholder="Course Name: e.g. Hifz"><input placeholder="Complete Introduction"><input placeholder="Duration: e.g. 2 Years"><input placeholder="Class Method: Zoom"><input placeholder="Class Timings"><input placeholder="Fee: 4000 PKR">
+                    <input placeholder="Teacher Name: Shabbir Hussain Kamal"><input placeholder="Topics Included"><button class="btn">Add/Update Course Page</button></div>
+            </div>
+
+            <div id="teachers" class="hidden">
+                <h2>Manage Teachers Data (Photo, Name, Qualification, Experience, Courses, Intro)</h2>
+                <div class="card"><input placeholder="Name"><input placeholder="Qualification"><input placeholder="Experience: e.g. 10+ Years"><input placeholder="Courses Teaching"><input placeholder="Short Intro"><button class="btn">Add Teacher Profile</button><br><br>Current
+                    Teacher: <b>Shabbir Hussain Kamal - Hafiz, Qari - 10+ Years - All Courses</b></div>
+            </div>
+
+            <div id="fees" class="hidden">
+                <h2>Fee Records (Monthly Fee, Registration Fee, Payment Method)</h2>
+                <div class="card">
+                    <table>
+                        <tr>
+                            <th>Student</th>
+                            <th>Monthly Fee: 3000</th>
+                            <th>Registration Fee: 500</th>
+                            <th>Payment Method: JazzCash 03092284760</th>
+                            <th>Submission Info</th>
+                        </tr>
+                        <tr>
+                            <td>Ali</td>
+                            <td>3000 Paid</td>
+                            <td>500 Paid</td>
+                            <td>JazzCash</td>
+                            <td>Screenshot Received</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="schedule" class="hidden">
+                <h2>Class Schedule Builder</h2>
+                <div class="card"><input type="time"> <select><option>Nazra</option><option>Hifz</option></select> <input placeholder="Student Name"><button class="btn">Create Schedule</button></div>
+            </div>
+
+            <div id="cert" class="hidden">
+                <h2>Issue Certificates</h2>
+                <div class="card"><input placeholder="Student Name"><select><option>Course Completed</option></select><button class="btn">Generate Certificate PDF</button></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            if (document.getElementById('pass').value === 'altahira123') {
+                document.getElementById('loginBox').classList.add('hidden');
+                document.getElementById('dashboard').classList.remove('hidden');
+            } else alert('Wrong Password! Use altahira123');
+        }
+
+        function show(id) {
+            document.querySelectorAll('.main > div').forEach(d => d.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+            document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+        }
+    </script>
+</body>
+
+</html>
