@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Al Tahira Quran Academy | Shabbir Hussain Kamal</title>
+    <style>
+         :root {
+            --green: #103326;
+            --gold: #d4b26a
+        }
+        
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #fffdf5
+        }
+        
+        header {
+            background: var(--green);
+            color: var(--gold);
+            padding: 15px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0
+        }
+        
+        .btn {
+            background: var(--green);
+            color: var(--gold);
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid var(--gold)
+        }
+        
+        section {
+            padding: 40px 6%
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px
+        }
+        
+        .card {
+            border: 1px solid #e8d9a8;
+            padding: 20px;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06)
+        }
+        
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px
+        }
+        
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            padding: 14px 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2 style="margin:0">🕌 Al Tahira Academy</h2><a href="admin.html" class="btn">Admin Panel</a></header>
+
+    <section style="text-align:center;background:var(--green);color:white">
+        <h1>Learn Quran Online Worldwide</h1>
+        <p>Teacher: Shabbir Hussain Kamal | Iran: +989200721412 | Pakistan: 0309-2284760</p>
+        <a href="#register" class="btn" style="background:var(--gold);color:var(--green)">Register Now</a>
+    </section>
+
+    <!-- 1. COURSES INFORMATION -->
+    <section id="courses">
+        <h2>1. Courses Information (Separate Page for Each Course)</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Qaida / Nazra</h3>
+                <p><b>Name:</b> Nazra Quran<br><b>Intro:</b> Basic reading for beginners<br><b>Duration:</b> 3-6 Months<br><b>Method:</b> 1-to-1 Zoom<br><b>Timings:</b> Flexible 24/7 (Iran/Pakistan Time)<br><b>Fee:</b> 3000 PKR / $15<br><b>Teacher:</b> Shabbir
+                    Hussain Kamal<br><b>Topics:</b> Arabic Alphabets, Tajweed Basics</p><a href="#register" class="btn">Enroll</a></div>
+            <div class="card">
+                <h3>Tajweed Course</h3>
+                <p><b>Duration:</b> 6 Months<br><b>Method:</b> Online<br><b>Timings:</b> Morning/Evening<br><b>Fee:</b> 3500 PKR<br><b>Topics:</b> Makharij, Sifat, Waqf</p><a href="#register" class="btn">Enroll</a></div>
+            <div class="card">
+                <h3>Hifz-e-Quran</h3>
+                <p><b>Duration:</b> 2-3 Years<br><b>Fee:</b> 4000 PKR<br><b>Topics:</b> Memorization with Revision</p><a href="#register" class="btn">Enroll</a></div>
+            <div class="card">
+                <h3>Translation & Tafseer</h3>
+                <p><b>Duration:</b> 1 Year<br><b>Fee:</b> 4000 PKR<br><b>Topics:</b> Word-to-word, Tafseer-e-Namuna</p><a href="#register" class="btn">Enroll</a></div>
+            <div class="card">
+                <h3>Salah & Duas + Islamic Studies</h3>
+                <p><b>Duration:</b> 3 Months<br><b>Fee:</b> 2500 PKR<br><b>Topics:</b> Wudu, Salah, Daily Duas, Seerah</p><a href="#register" class="btn">Enroll</a></div>
+        </div>
+    </section>
+
+    <!-- 2. ONLINE REGISTRATION -->
+    <section id="register" style="background:#f8f1d8">
+        <h2>2. Online Registration</h2>
+        <form class="card" onsubmit="window.open('https://wa.me/923092284760?text=New Registration: '+this.name.value+' Age:'+this.age.value+' Course:'+this.course.value); alert('Registration Sent to Institute!'); return false;">
+            <input name="name" placeholder="Name" required>
+            <input name="age" placeholder="Age" required>
+            <input placeholder="Education" required>
+            <input placeholder="Country / Phone Number : e.g. Iran / 0309..." required>
+            <select name="course"><option>Select Course: Nazra</option><option>Hifz</option><option>Tajweed</option><option>Translation & Tafseer</option><option>Salah & Duas</option></select>
+            <select><option>Preferred Class Time: Morning (Iran 9am-12pm)</option><option>Evening</option><option>Night</option></select>
+            <button class="btn" style="width:100%">Complete Registration - Notify Institute</button>
+            <p style="font-size:12px;text-align:center">After registration, institute will get notification on WhatsApp 03092284760</p>
+        </form>
+    </section>
+
+    <!-- 4. TEACHERS INTRODUCTION -->
+    <section id="teachers">
+        <h2>4. Teacher Introduction</h2>
+        <div class="card" style="display:flex;gap:20px">
+            <img src="https://ui-avatars.com/api/?name=Shabbir+Hussain&background=103326&color=d4b26a&size=120" style="border-radius:50%">
+            <div><b>Name:</b> Shabbir Hussain Kamal<br><b>Photo:</b> As above<br><b>Qualification:</b> Hafiz, Qari, Alim, Farsi/Urdu/English Expert<br><b>Experience:</b> 10+ Years Teaching in Iran & Pakistan<br><b>Courses Teaching:</b> All 6 Courses<br><b>Short Intro:</b>                Teaching Quran to students worldwide from Lohar, Skardu. Special expertise for Iranian students.</div>
+        </div>
+    </section>
+
+    <!-- 5. FEE INFORMATION -->
+    <section id="fee">
+        <h2>5. Fee Information</h2>
+        <div class="grid">
+            <div class="card"><b>Monthly Fee:</b> 2500-4000 PKR ($15-$20)<br><b>Registration Fee:</b> 500 PKR (Free First Trial)<br><b>Payment Method:</b> JazzCash 03092284760, Easypaisa 03109372859, Bank Transfer<br><b>Submission Info:</b> Send Screenshot on WhatsApp
+                after payment</div>
+        </div>
+    </section>
+
+    <!-- 3. CONTACT NUMBER -->
+    <section id="contact">
+        <h2>3. Contact Numbers & Map</h2>
+        <div class="grid">
+            <div class="card"><a href="https://wa.me/923092284760" class="btn" style="background:#25D366;color:white;border:none">💬 Direct WhatsApp Button</a><br><br><b>Phone:</b> 0310-9372859 Home Teacher<br><b>Pakistan WhatsApp:</b> 0309-2284760<br><b>Iran:</b> +989200721412<br><b>Email:</b>                info@altahiraacademy.com<br><br>
+                <form><input placeholder="Your Name"><textarea placeholder="Message"></textarea><button class="btn">Send Message</button></form>
+            </div>
+            <div class="card"><iframe src="https://maps.google.com/maps?q=Lohar%20Bargah%20Skardu&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0"></iframe>
+                <p>Location: Lohar, Skardu, Gilgit-Baltistan, Pakistan</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. ADMIN PANEL LINK -->
+    <section style="text-align:center">
+        <h2>6. Admin Panel</h2>
+        <p>Separate Dashboard for Admin to View Registrations, Manage Students, Courses, Teachers, Fee Records, Class Schedule, Issue Certificates</p><a href="admin.html" class="btn">Open Admin Panel (Password: altahira123)</a></section>
+
+    <a href="https://wa.me/923092284760" class="whatsapp">WhatsApp</a>
+    <footer style="background:var(--green);color:var(--gold);text-align:center;padding:15px">© 2026 Al Tahira Quran Academy - All Rights Reserved</footer>
+</body>
+
+</html>
