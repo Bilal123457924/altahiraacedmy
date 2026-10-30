@@ -1,171 +1,398 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Al Tahira Quran Academy | Shabbir Hussain Kamal</title>
-    <style>
-         :root {
-            --green: #103326;
-            --gold: #d4b26a
-        }
-        
-        body {
-            font-family: Arial;
-            margin: 0;
-            background: #fffdf5
-        }
-        
-        header {
-            background: var(--green);
-            color: var(--gold);
-            padding: 15px 6%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0
-        }
-        
-        .btn {
-            background: var(--green);
-            color: var(--gold);
-            padding: 12px 22px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            border: 1px solid var(--gold)
-        }
-        
-        section {
-            padding: 40px 6%
-        }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px
-        }
-        
-        .card {
-            border: 1px solid #e8d9a8;
-            padding: 20px;
-            border-radius: 12px;
-            background: white;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06)
-        }
-        
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 6px
-        }
-        
-        .whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: white;
-            padding: 14px 18px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold
-        }
-    </style>
+<meta charset="UTF-8 PRsCommits PRsCommits PRsCommits">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Al Tahira Academy</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f8f6;
+    color: #333;
+}
+
+header {
+    background: #075b42;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #f5d76e;
+}
+
+.hero {
+    background: linear-gradient(120deg, #064b37, #16865f);
+    color: white;
+    text-align: center;
+    padding: 110px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #f5d76e;
+    color: #075b42;
+    padding: 14px 28px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section {
+    padding: 65px 8%;
+    text-align: center;
+}
+
+.section h2 {
+    color: #075b42;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.about-text {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+.courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.course-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px #00000012;
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-6px);
+}
+
+.course-card h3 {
+    color: #075b42;
+    margin-bottom: 15px;
+}
+
+.course-card p {
+    line-height: 1.6;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.feature {
+    background: #e5f2eb;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.feature h3 {
+    color: #075b42;
+    margin-bottom: 10px;
+}
+
+form {
+    max-width: 550px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, select, textarea {
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 100%;
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+button {
+    background: #075b42;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #13845e;
+}
+
+#response {
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+.contact-info {
+    line-height: 2;
+}
+
+footer {
+    background: #063d2e;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+@media(max-width: 650px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+}
+</style>
 </head>
 
 <body>
-    <header>
-        <h2 style="margin:0">🕌 Al Tahira Academy</h2><a href="admin.html" class="btn">Admin Panel</a></header>
 
-    <section style="text-align:center;background:var(--green);color:white">
-        <h1>Learn Quran Online Worldwide</h1>
-        <p>Teacher: Shabbir Hussain Kamal | Iran: +989200721412 | Pakistan: 0309-2284760</p>
-        <a href="#register" class="btn" style="background:var(--gold);color:var(--green)">Register Now</a>
-    </section>
+<header>
+    <div class="logo">Al Tahira Academy</div>
 
-    <!-- 1. COURSES INFORMATION -->
-    <section id="courses">
-        <h2>1. Courses Information (Separate Page for Each Course)</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Qaida / Nazra</h3>
-                <p><b>Name:</b> Nazra Quran<br><b>Intro:</b> Basic reading for beginners<br><b>Duration:</b> 3-6 Months<br><b>Method:</b> 1-to-1 Zoom<br><b>Timings:</b> Flexible 24/7 (Iran/Pakistan Time)<br><b>Fee:</b> 3000 PKR / $15<br><b>Teacher:</b> Shabbir
-                    Hussain Kamal<br><b>Topics:</b> Arabic Alphabets, Tajweed Basics</p><a href="#register" class="btn">Enroll</a></div>
-            <div class="card">
-                <h3>Tajweed Course</h3>
-                <p><b>Duration:</b> 6 Months<br><b>Method:</b> Online<br><b>Timings:</b> Morning/Evening<br><b>Fee:</b> 3500 PKR<br><b>Topics:</b> Makharij, Sifat, Waqf</p><a href="#register" class="btn">Enroll</a></div>
-            <div class="card">
-                <h3>Hifz-e-Quran</h3>
-                <p><b>Duration:</b> 2-3 Years<br><b>Fee:</b> 4000 PKR<br><b>Topics:</b> Memorization with Revision</p><a href="#register" class="btn">Enroll</a></div>
-            <div class="card">
-                <h3>Translation & Tafseer</h3>
-                <p><b>Duration:</b> 1 Year<br><b>Fee:</b> 4000 PKR<br><b>Topics:</b> Word-to-word, Tafseer-e-Namuna</p><a href="#register" class="btn">Enroll</a></div>
-            <div class="card">
-                <h3>Salah & Duas + Islamic Studies</h3>
-                <p><b>Duration:</b> 3 Months<br><b>Fee:</b> 2500 PKR<br><b>Topics:</b> Wudu, Salah, Daily Duas, Seerah</p><a href="#register" class="btn">Enroll</a></div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#features">Features</a>
+        <a href="#register">Registration</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>Welcome to Al Tahira Academy</h1>
+    <p>Learn Quran with Knowledge, Tajweed and Understanding</p>
+    <a href="#register" class="btn">Register Now</a>
+</section>
+
+<section class="section" id="about">
+    <h2>About Our Academy</h2>
+    <p class="about-text">
+        Al Tahira Academy provides online Quran education for
+        children and adults. Our aim is to help students learn
+        the Holy Quran with proper pronunciation, Tajweed,
+        understanding and Islamic knowledge.
+    </p>
+</section>
+
+<section class="section" id="courses">
+    <h2>Our Courses</h2>
+
+    <div class="courses">
+
+        <div class="course-card">
+            <h3>Nazra Quran</h3>
+            <p>Learn Quran reading with correct pronunciation.</p>
         </div>
-    </section>
 
-    <!-- 2. ONLINE REGISTRATION -->
-    <section id="register" style="background:#f8f1d8">
-        <h2>2. Online Registration</h2>
-        <form class="card" onsubmit="window.open('https://wa.me/923092284760?text=New Registration: '+this.name.value+' Age:'+this.age.value+' Course:'+this.course.value); alert('Registration Sent to Institute!'); return false;">
-            <input name="name" placeholder="Name" required>
-            <input name="age" placeholder="Age" required>
-            <input placeholder="Education" required>
-            <input placeholder="Country / Phone Number : e.g. Iran / 0309..." required>
-            <select name="course"><option>Select Course: Nazra</option><option>Hifz</option><option>Tajweed</option><option>Translation & Tafseer</option><option>Salah & Duas</option></select>
-            <select><option>Preferred Class Time: Morning (Iran 9am-12pm)</option><option>Evening</option><option>Night</option></select>
-            <button class="btn" style="width:100%">Complete Registration - Notify Institute</button>
-            <p style="font-size:12px;text-align:center">After registration, institute will get notification on WhatsApp 03092284760</p>
-        </form>
-    </section>
-
-    <!-- 4. TEACHERS INTRODUCTION -->
-    <section id="teachers">
-        <h2>4. Teacher Introduction</h2>
-        <div class="card" style="display:flex;gap:20px">
-            <img src="https://ui-avatars.com/api/?name=Shabbir+Hussain&background=103326&color=d4b26a&size=120" style="border-radius:50%">
-            <div><b>Name:</b> Shabbir Hussain Kamal<br><b>Photo:</b> As above<br><b>Qualification:</b> Hafiz, Qari, Alim, Farsi/Urdu/English Expert<br><b>Experience:</b> 10+ Years Teaching in Iran & Pakistan<br><b>Courses Teaching:</b> All 6 Courses<br><b>Short Intro:</b>                Teaching Quran to students worldwide from Lohar, Skardu. Special expertise for Iranian students.</div>
+        <div class="course-card">
+            <h3>Tajweed & Qiraat</h3>
+            <p>Learn Quran recitation and Tajweed rules.</p>
         </div>
-    </section>
 
-    <!-- 5. FEE INFORMATION -->
-    <section id="fee">
-        <h2>5. Fee Information</h2>
-        <div class="grid">
-            <div class="card"><b>Monthly Fee:</b> 2500-4000 PKR ($15-$20)<br><b>Registration Fee:</b> 500 PKR (Free First Trial)<br><b>Payment Method:</b> JazzCash 03092284760, Easypaisa 03109372859, Bank Transfer<br><b>Submission Info:</b> Send Screenshot on WhatsApp
-                after payment</div>
+        <div class="course-card">
+            <h3>Hifz-ul-Quran</h3>
+            <p>Memorize the Holy Quran with teacher guidance.</p>
         </div>
-    </section>
 
-    <!-- 3. CONTACT NUMBER -->
-    <section id="contact">
-        <h2>3. Contact Numbers & Map</h2>
-        <div class="grid">
-            <div class="card"><a href="https://wa.me/923092284760" class="btn" style="background:#25D366;color:white;border:none">💬 Direct WhatsApp Button</a><br><br><b>Phone:</b> 0310-9372859 Home Teacher<br><b>Pakistan WhatsApp:</b> 0309-2284760<br><b>Iran:</b> +989200721412<br><b>Email:</b>                info@altahiraacademy.com<br><br>
-                <form><input placeholder="Your Name"><textarea placeholder="Message"></textarea><button class="btn">Send Message</button></form>
-            </div>
-            <div class="card"><iframe src="https://maps.google.com/maps?q=Lohar%20Bargah%20Skardu&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0"></iframe>
-                <p>Location: Lohar, Skardu, Gilgit-Baltistan, Pakistan</p>
-            </div>
+        <div class="course-card">
+            <h3>Translation & Tafseer</h3>
+            <p>Understand Quran meanings and explanations.</p>
         </div>
-    </section>
 
-    <!-- 6. ADMIN PANEL LINK -->
-    <section style="text-align:center">
-        <h2>6. Admin Panel</h2>
-        <p>Separate Dashboard for Admin to View Registrations, Manage Students, Courses, Teachers, Fee Records, Class Schedule, Issue Certificates</p><a href="admin.html" class="btn">Open Admin Panel (Password: altahira123)</a></section>
+        <div class="course-card">
+            <h3>Namaz & Duas</h3>
+            <p>Learn daily prayers, duas and Islamic practices.</p>
+        </div>
 
-    <a href="https://wa.me/923092284760" class="whatsapp">WhatsApp</a>
-    <footer style="background:var(--green);color:var(--gold);text-align:center;padding:15px">© 2026 Al Tahira Quran Academy - All Rights Reserved</footer>
+    </div>
+</section>
+
+<section class="section" id="features">
+    <h2>Why Choose Us?</h2>
+
+    <div class="features">
+        <div class="feature">
+            <h3>Online Classes</h3>
+            <p>Learn from home with flexible class timings.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Qualified Teachers</h3>
+            <p>Learn with experienced Quran teachers.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Male & Female Teachers</h3>
+            <p>Teacher options according to student needs.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Student Support</h3>
+            <p>Guidance and support throughout learning.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="register">
+    <h2>Student Registration</h2>
+
+    <form id="registrationForm">
+
+        <input type="text" id="name"
+        placeholder="Student Full Name" required>
+
+        <input type="email" id="email"
+        placeholder="Email Address" required>
+
+        <input type="tel" id="phone"
+        placeholder="WhatsApp / Phone Number" required>
+
+        <select id="gender" required>
+            <option value="">Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+
+        <select id="course" required>
+            <option value="">Select Course</option>
+            <option>Nazra Quran</option>
+            <option>Tajweed & Qiraat</option>
+            <option>Hifz-ul-Quran</option>
+            <option>Translation & Tafseer</option>
+            <option>Namaz & Duas</option>
+        </select>
+
+        <select id="teacher" required>
+            <option value="">Preferred Teacher</option>
+            <option>Male Teacher</option>
+            <option>Female Teacher</option>
+            <option>No Preference</option>
+        </select>
+
+        <textarea id="message"
+        placeholder="Additional Message"></textarea>
+
+        <button type="submit">Submit Registration</button>
+
+    </form>
+
+    <p id="response"></p>
+</section>
+
+<section class="section" id="contact">
+    <h2>Contact Us</h2>
+
+    <div class="contact-info">
+        <p><strong>Academy:</strong> Al Tahira Academy</p>
+        <p><strong>Email:</strong> info@altahiraacademy.com</p>
+        <p><strong>Phone:</strong> +92 3092284760</p>
+        <p><strong>Classes:</strong> Online Quran Education</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Al Tahira Academy. All Rights Reserved.</p>
+</footer>
+
+<script>
+document.getElementById("registrationForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const student = {
+        name: document.getElementById("name").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        gender: document.getElementById("gender").value,
+        course: document.getElementById("course").value,
+        teacher: document.getElementById("teacher").value,
+        message: document.getElementById("message").value.trim(),
+        date: new Date().toLocaleDateString(),
+        status: "Pending"
+    };
+
+    let students = JSON.parse(
+        localStorage.getItem("academyStudents") || "[]"
+    );
+
+    students.push(student);
+
+    localStorage.setItem(
+        "academyStudents",
+        JSON.stringify(students)
+    );
+
+    document.getElementById("response").textContent =
+        "Registration submitted successfully!";
+
+    document.getElementById("registrationForm").reset();
+});
+</script>
+
 </body>
-
 </html>
